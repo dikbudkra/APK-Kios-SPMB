@@ -17,6 +17,9 @@ jobs:
           java-version: '11'
           cache: 'gradle'
 
+      - name: Perbaiki Mesin Pembangun (Regenerate Wrapper)
+        run: gradle wrapper
+
       - name: Berikan Izin Eksekusi
         run: chmod +x gradlew
 
