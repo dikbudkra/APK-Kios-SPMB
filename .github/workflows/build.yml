@@ -16,12 +16,16 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Gunakan Mesin Gradle Lawas (Spesifik)
+      - name: Gunakan Mesin Gradle Lawas
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '7.4.2'
 
-      - name: Proses Membangun APK Langsung
+      - name: Buat Surat Izin Palsu (Bypass Firebase)
+        run: |
+          echo '{ "project_info": { "project_number": "123", "project_id": "dummy" }, "client": [ { "client_info": { "mobilesdk_app_id": "1:123:android:abc", "android_client_info": { "package_name": "mgks.os.webview" } }, "api_key": [ { "current_key": "dummy" } ] } ], "configuration_version": "1" }' > app/google-services.json
+
+      - name: Proses Membangun APK
         run: gradle assembleDebug
 
       - name: Simpan dan Siapkan Unduhan
