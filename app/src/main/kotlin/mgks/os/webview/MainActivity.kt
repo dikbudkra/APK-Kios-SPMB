@@ -177,11 +177,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.w("READ_PERM = ", Manifest.permission.READ_EXTERNAL_STORAGE)
         Log.w("WRITE_PERM = ", Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        //Prevent the app from being started again when it is still alive in the background
-        if (!isTaskRoot) {
-            finish()
-            return
-        }
+      
 
         setContentView(R.layout.activity_main)
 
