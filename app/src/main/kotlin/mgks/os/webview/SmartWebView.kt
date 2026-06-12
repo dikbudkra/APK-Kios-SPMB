@@ -42,7 +42,7 @@ internal object SmartWebView {
 	var ASWV_LAYOUT 		= 0                // default=0; for clear fullscreen layout and 1 to add drawer and navigation bar
 
 	// URL configs; search URL can be left empty if default layout is 0
-	var ASWV_URL 			= "file:///android_asset/offline.html"      // complete URL of your website or offline webpage
+	var ASWV_URL 			= "https://dikbudkra.github.io/antrianposkoSPMB"      // complete URL of your website or offline webpage
 	var ASWV_SEARCH 		= "https://www.google.com/search?q="        // search query will start by the end of the present string
 	var ASWV_SHARE_URL 		= "$ASWV_URL?share="                        // URL where you process external content shared with the app
 
