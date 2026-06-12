@@ -1,0 +1,30 @@
+name: Rakit APK Kios
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ambil Kode
+        uses: actions/checkout@v4
+
+      - name: Siapkan Sistem Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: 'gradle'
+
+      - name: Berikan Izin Eksekusi
+        run: chmod +x gradlew
+
+      - name: Proses Membangun APK
+        run: ./gradlew assembleDebug
+
+      - name: Simpan dan Siapkan Unduhan
+        uses: actions/upload-artifact@v4
+        with:
+          name: APK-Kios-SPMB-2026
+          path: app/build/outputs/apk/debug/*.apk
