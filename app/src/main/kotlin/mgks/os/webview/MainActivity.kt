@@ -467,6 +467,22 @@ class MainActivity : AppCompatActivity() {
     //Actions based on shouldOverrideUrlLoading
     fun url_actions(view: WebView, url: String): Boolean {
         var a = true
+
+		// -- KODE PENEMBUS RAWBT & PRINTER --
+            if (url.startsWith("intent:") || url.startsWith("rawbt:")) {
+                try {
+                    val intent = android.content.Intent.parseUri(url, android.content.Intent.URI_INTENT_SCHEME)
+                    if (intent != null) {
+                        view?.context?.startActivity(intent)
+                        return true
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    return true
+                }
+            }
+            // -- BATAS KODE PENEMBUS --
+			
         //Show toast error if not connected to the network
         if (!ASWP_OFFLINE && !DetectConnection.isInternetAvailable(this@MainActivity)) {
             Toast.makeText(applicationContext, getString(R.string.check_connection), Toast.LENGTH_SHORT).show()
