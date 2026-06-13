@@ -17,11 +17,11 @@ internal object SmartWebView {
 	var ASWP_CAMUPLOAD 		= true            // enable upload from camera for photos
 	var ASWP_ONLYCAM 		= false           // incase you want only camera files to upload
 	var ASWP_MULFILE 		= true            // upload multiple files in webview
-	var ASWP_LOCATION 		= true            // track GPS locations
+	var ASWP_LOCATION 		= false            // track GPS locations
 
-	var ASWP_RATINGS 		= true            // show ratings dialog; auto configured ; edit method get_rating() for customizations
+	var ASWP_RATINGS 		= false            // show ratings dialog; auto configured ; edit method get_rating() for customizations
 
-	var ASWP_PULLFRESH 		= true            // pull refresh current url
+	var ASWP_PULLFRESH 		= false            // pull refresh current url
 	var ASWP_PBAR 			= true            // show progress bar in app
 	var ASWP_ZOOM 			= false           // zoom control for webpages view
 	var ASWP_SFORM 			= false           // save form cache and auto-fill information
